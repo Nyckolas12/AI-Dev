@@ -1,11 +1,10 @@
 #pragma once
-#pragma once
 #include "Scene.h"
 #include "Framebuffer.h"
 #include "Cells.h"
 #include <memory>
 
-class CAScene : public Scene
+class GOLScene : public Scene
 {
 public:
 	bool Initialize() override;
@@ -14,5 +13,8 @@ public:
 
 public:
 	std::unique_ptr<Framebuffer> m_framebuffer;
-	std::unique_ptr<Cells<uint8_t>> m_cells;
+	std::unique_ptr<Cells<uint8_t>> m_cellsA;
+	std::unique_ptr<Cells<uint8_t>> m_cellsB;
+
+	int m_frame{ 0 };
 };
